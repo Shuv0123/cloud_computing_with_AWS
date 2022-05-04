@@ -42,6 +42,6 @@ When chossing the region we have to think about the end user. The app should be 
 - ssh - chmod 400 file.pem
 - ports -80 - 3000
 
-http://54.246.44.215/
+
 
 
