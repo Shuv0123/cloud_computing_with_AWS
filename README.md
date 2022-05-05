@@ -17,8 +17,10 @@ Cloud computing is a pay as you go services, making the service cost effective.
 ## Why Cloud Compting (benefits)?
 
 - Security 
-
-- Cost 
+- Cost
+- scalability 
+- reliability 
+- accessability
 
 the key benefit of Cloud Computing in terms of cost element is, you can never 100% predict the traffic.
 
