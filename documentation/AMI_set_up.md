@@ -1,6 +1,6 @@
 # AMAZON MACHINE IMAGE (AMI)
 ## What is an AMI?
-- An AMI is a supported and maintained an image/snapshot/blueprint/copy provided by AWS of an instance, which retains full functionality and set up of the original instance. Therfore, it does not require a manual set up.
+- An AMI is a supported and maintained an image/snapshot/blueprint/copy of an instance provided by AWS, which retains full functionality and set up of the original instance. Therfore, it does not require a manual set up.
 
 ## Use case of AMI
 

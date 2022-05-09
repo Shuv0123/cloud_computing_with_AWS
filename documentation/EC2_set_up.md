@@ -66,6 +66,7 @@
   - sudo apt-get install nginx -y
   - cd /app
 ### Install node.js
+- sudo apt install python-software-properties -y
 - curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 - sudo apt install -y nodejs
 - npm install
@@ -82,6 +83,17 @@
 
   - location /fibonacci/ { proxy_pass http://localhost:3000/fibonacci/; }
 - cd app
+- npm start
+### If the above commands do NOT initialise the reverse proxy do as follows
+- cd /etc/nginx/sites-available
+- Test if NGINX has any configuration errors - "sudo nginx -t" if this does not pop out any error message do as follows
+- sudo systemctl reload nginx
+- sudo systemctl restart nginx
+- sudo systemctl enable nginx
+- Check the status of nginx - "sudo systemctl status nginx"
+- cd app
+- sudo apt update -y
+- sudo apt upgrade -y 
 - npm start
 ## MongoDB set-up
 - Search and select "EC2"
@@ -118,8 +130,9 @@
 - Go on your git BASH
 - cd .ssh
 - Paste "command example"
--sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4 - The key for MongoDB
+- sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv D68FA50FEA312927 - The key for MongoDB
 - sudo add-apt-repository 'deb [arch=amd64] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse' - The version for MongoDB
+   - in our case we used echo "deb https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
 - sudo apt update -y
 - sudo apt upgrade -y
 - sudo apt install mongodb-org -y - Install the specified version of MongoDB
@@ -133,7 +146,7 @@
 - Create an environment variable in the App instance - export DB_HOST=//mongodb:"DB public ip address":27017/posts
   - Check if the EV has been setup - "printenv DB_HOST"
   - in production we use the private ip because we wont have the public ip
-  - if we want to make the EV persistent we need to put it into a file called bashrc - sudo echo "export DB_HOST=//mongodb:"DB public ip address":27017/posts" >> ~/.bashrc
+  - if we want to make the EV persistent we need to put it into a file called bashrc - sudo echo "export DB_HOST=mongodb://"DB public ip address":27017/posts" >> ~/.bashrc
 - 2 ways to get the above function to start working:
   - exit out and then exit in 
   - or source ~/.bashrc (source means refresh this terminal)
@@ -142,8 +155,8 @@
 - Go and ssh to your DB instance
 - cd /etc
 - sudo nano mongod.conf (this is a default configureation file for mongoDB)
-- Go down to "network interface" the ip doesnt match (it works for windows) so change that to 0.0.0.0 and save it
-   - we did this to ease of use, if we were in production we would put the app ip or the vbc or submit.
+- Go down to "network interface" the bindip does not match (because you are trying to send a request and it only accepts from the ip 127.0.0.1 which is a default ip for a windows machine, but you are sending a request from a linux form a cloud provider on aws so thats why is not letting you in) so change that to 0.0.0.0 and save it
+   - we did this to ease of use, if we were in production we would put the app ip or the vbc or submit ip.
    - everytime we make a change in the configuration file or any other tool, we need to restart it to make sure it starts up with the new edits
 - sudo systemctl restart mongod
 - sudo systemctl enable mongod
@@ -157,6 +170,11 @@
 error - throw ER unhandled error event address already in use 3000
 solution - "ps aux" - look for node find the node and copy the PID(process ID) and do "sudo kill PID"
 
+
+## EXTRA
+- to see if the instance can connect we can try - "telnet" "the ip address we are trying to connect"
+- ve ~/.bashrc lets us edit the env variable directly
+- to exit vim after editing file ":wq"
 
 
 
