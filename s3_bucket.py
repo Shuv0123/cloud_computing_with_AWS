@@ -22,7 +22,7 @@ Class S3:
          self.s3_file.objects(bucket_name, file_name).delete()
 
      def delete_bucket(self, bucket_name):
-         self.s3_client.Bucket(bucket_name).delet()
+         self.s3_client.Bucket(bucket_name).delete()
 
 
 file = S3()
