@@ -23,6 +23,7 @@
       - sudo systemctl restart nginx
       - sudo systemctl enable nginx
 - Create Launch Template
+## Create Auto Scalling Group
 - Open new AWS window drop down to Auto Scalling
   - click on Auto Scaliing Groups 
 - Select Create Auto Scalling Group
