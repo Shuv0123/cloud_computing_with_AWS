@@ -47,8 +47,10 @@ Listeners support the following protocols and ports:
 - launch app instance
 
 
-# what is VPC
-VPC is the networking layer for Amazon Elastic Compute Cloud (Amazon EC2) and provides a private, isolated section of the AWS Cloud where you can launch AWS services and other resources in a virtual network.
+# what is VPC and services attached to VPC
+![](images/VPC_layout.png)
+
+Virtual Private Cloud (VPC) is the networking layer for Amazon Elastic Compute Cloud (Amazon EC2) and provides a private, isolated section of the AWS Cloud where you can launch AWS services and other resources in a virtual network.
 
 ## Iternet gateway
 A computer that sits between different networks or applications. The gateway converts information, data or other communications from one protocol or format to another. A router may perform some of the functions of a gateway. An Internet gateway can transfer communications between an enterprise network and the Internet.

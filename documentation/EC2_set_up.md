@@ -1,5 +1,7 @@
 # Cloud Setup (step-by-step)
-![](images/2_tier_architechture.png)
+
+![](images/VPC_layout.png)
+
 ## setup access to EC2(VM) on AWS
 - Move file.pem into .ssh folder, located in user directory (Shuvo)
 - Give read only permission to the file.pem - "chmod 400 file.pem" in bash terminal
