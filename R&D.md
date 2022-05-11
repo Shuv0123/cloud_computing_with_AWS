@@ -52,6 +52,10 @@ Listeners support the following protocols and ports:
 
 Virtual Private Cloud (VPC) is the networking layer for Amazon Elastic Compute Cloud (Amazon EC2) and provides a private, isolated section of the AWS Cloud where you can launch AWS services and other resources in a virtual network.
 
+## Why do we need a VPC?
+
+
+
 ## Iternet gateway
 A computer that sits between different networks or applications. The gateway converts information, data or other communications from one protocol or format to another. A router may perform some of the functions of a gateway. An Internet gateway can transfer communications between an enterprise network and the Internet.
 
@@ -63,7 +67,9 @@ An internet gateway supports IPv4 and IPv6 traffic. It does not cause availabili
 
 
 ## Routing table
-A route table contains a set of rules, called routes, that determine where network traffic from your subnet or gateway is directed.
+A route table contains a set of rules, called routes, that determine where network traffic from your subnet or gateway is directed. 
+
+eg. traffic light, controls and diverts the traffic in the internet
 
 ## WHat is a subnet
 A subnet, or subnetwork, is a network inside a network. Subnets make networks more efficient. Through subnetting, network traffic can travel a shorter distance without passing through unnecessary routers to reach its destination.
@@ -90,5 +96,8 @@ Every device has an IP address with two pieces: the client or host address and t
 - A private IP network allows data to be shared between connected devices securely, by enforcing password protected connectivity that allows only those devices in your office or home to access the IP network
 
 ## NACL
-- A network access control list (NACL) is an optional layer of security for your VPC that acts as a firewall for controlling traffic in and out of one or more subnets. 
+- A network access control list (NACL) is an added layer of security for your VPC that acts as a firewall for controlling traffic in and out of one or more subnets. 
 
+- what is the difference between NACL and a security group
+- security group works at instance level
+- NACL controls the in and out rules 
