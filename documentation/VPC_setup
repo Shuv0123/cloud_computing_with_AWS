@@ -3,7 +3,7 @@
 - Select Your VPCs from the left window
 - Create VPC 
   - select VPC only
-  - Name tag "eng110-shuvo-vpc
+  - Name tag "eng110-shuvo-vpc"
   - IPv4 CIDR - used "10.0.0.0/16" but it is calculated using subnet sizing
   - Click on Create VPC
 
@@ -73,7 +73,10 @@ We can launch an EC2/AMI using our on VPC architecture details
 - subnet - eng110-shuvo-sb-public
 - auto assign public IP - yes
 
-
+### To allow app instance to access DB, DB security group should allow public subnet through port 27017
+ 
+inbound rule things can be done to me 
+outbond rule things i can do 
  
 
 

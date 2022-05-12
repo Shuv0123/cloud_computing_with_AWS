@@ -101,3 +101,29 @@ Every device has an IP address with two pieces: the client or host address and t
 - what is the difference between NACL and a security group
 - security group works at instance level
 - NACL controls the in and out rules 
+
+
+# What is CI-CD-CDE
+
+- CI-CD is the backbone of DevOps practices and automation for faster software release.
+
+- Continuous integration (CI) - Continuous merging/commiting of branches to the master branch, automated build and test process.
+
+- Continuous delivery (CD) ectension of CI, it provides continuous release of new changes to customer in a sustainable way. in CD deployment is manual.
+
+- Continuous deployment (CDE) is the whole process of coding, testing and deployment is continuos 
+
+# what is the difference between CD & CDE
+in CD everything is continuous except for the the deployment, which is manual whereas in CDE the whole process starting from sourcing till production is continuos
+
+# What is jenkins, what are the benefits?
+
+
+# What is the SDLC using Jenkins stages
+
+
+# what tools are available in the industry for CICD
+
+# 
+
+
