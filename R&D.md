@@ -114,16 +114,38 @@ Every device has an IP address with two pieces: the client or host address and t
 - Continuous deployment (CDE) is the whole process of coding, testing and deployment is continuos 
 
 # what is the difference between CD & CDE
-in CD everything is continuous except for the the deployment, which is manual whereas in CDE the whole process starting from sourcing till production is continuos
+- in CD everything is continuous except for the the deployment, which is manual whereas in CDE the whole process starting from sourcing till production is continuos
 
 # What is jenkins, what are the benefits?
+- Jenkins is an open source automation server. It helps automate the parts of software development related to building, testing, and deploying, facilitating continuous integration and continuous delivery. It is a server-based system that runs in servlet containers such as Apache Tomcat.
 
-
+benefits 
+- it is an open-source tool with great community support.
+- It is easy to install.
+- It has 1000+ plugins to ease your work. If a plugin does not exist, you can code it and share it with the community.
+- It is free of cost.
+- It is built with Java and hence, it is portable to all the major platforms.
 # What is the SDLC using Jenkins stages
 
 
 # what tools are available in the industry for CICD
+1. Self-Hosted
+Drone CI (Continuous Delivery platform written in GO)
+TeamCity (By Jetbrains)
+2. Hosted ( as a service)
 
+Wercker
+CircleCI
+CodeShip
+SemaphoreCI
+Amazon AWS CI/CD tools
 # 
+#which OS does it support?
+uname -a
+#Which Time zone date
+date
+#which env does it provide
 
+#does it have a node support
 
+if os id linux+ubuntu trigger next job
