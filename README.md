@@ -60,9 +60,11 @@ https://aws.amazon.com/about-aws/global-infrastructure/
 - how it will benefit the business?
 - flexible? faster to use? scalable? higly available?
 
- >[2-Tier Architecture Set-up](documentation/EC2_set_up.md) 
+>[2-Tier Architecture Set-up](EC2_set_up.md) 
 
->[Amazon Machine Image(AMI) Set-Up](documentation/AMI_set_up.md)
+>[Amazon Machine Image(AMI) Set-Up](AMI_set_up.md)
+
+>[Simple Storage Service S3](S3.md)
 
 ## Scale in/out vs Scale up/down
 - Scale in/out is when you increse or decrease the number of instances/servers running. Whereas Scale up/down is when you increse the capacity of the instance or server how big the server is (storage)

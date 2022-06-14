@@ -149,3 +149,16 @@ date
 #does it have a node support
 
 if os id linux+ubuntu trigger next job
+
+launch template vs launch configuration
+
+s3 standard vs s3 glaciar difference
+
+lunch configuration immutable
+lunch template is mutable
+
+
+
+ami replicas immutable
+
+scale out multi azs
