@@ -1,6 +1,6 @@
 # Cloud Setup (step-by-step) - 2-Tier Architecture Set-up
 
-![](images/2_tier_architechture.png)
+![](https://github.com/Shuv0123/cloud_computing_with_AWS/blob/main/images/2_tier_architechture.png)
 
 ## setup access to EC2(VM) on AWS
 - Move `file.pem` into `.ssh folder`, located in user directory (Shuvo)
