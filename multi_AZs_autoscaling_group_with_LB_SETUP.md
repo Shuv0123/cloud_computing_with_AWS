@@ -1,5 +1,36 @@
 # High Availability & Scalability Deployment in Multi AZs Autoscaling group with LB SETUP
 
+![](images/Autoscalling_LB.png)
+
+## Multi Availability Zones / High Availability
+AWS has differet physical localtions around the world and these are called regions and within each region it has 2-3 availability zones which are actual physical data centers. All AZs within a single Region are connected to one another through private fiber-optic networking, allowing each AZ to communicate with one another and transfer data quickly and efficiently as required. 
+
+## Scalability
+- Vertical Scalability (scale up/down) means increasing the size of an instance eg. from t2 micro to t2 medium. This kind of scalabilty is usualy used for databases.
+- Horizontal Scalability (scale in/out) means you are increasing the number of instances, so from 2 to 5. This is usually used for web applications. This is done using autoscaling groups.
+
+## Autoscaling
+Autoscaling is a service within AWS that automatically monitors and adjusts the amount of computational resources so that the app in the server is running in an optimal way. Autoscalling group will either scale out or scale in depending on demand and traffic.
+
+## Load Balancer
+A loadbalancer is a service that distributes traffic between servers so that no instance get overwelmed. It works litterally like a balance. 
+There are different types of load balancers, which one to use depends on business needs:
+ - Application Load Balancer (ALB), they work with internet facing app and they are the most advanced Load Balancers
+ - Elastic Load Balancer (ELB)
+ - Network Load Balnacer (NLB)
+
+## Benefits of Load Balancer
+- distrubutes traffic load across different instances
+- handle failure of instances (balancing the load less likely that instance fails)
+- do regualr health checks of instances
+- high availability across zones 
+
+
+## Listener Group
+A listener is a process that check for connection requests using the protocol and port that you configure. The rules that you define for a listener determine how the load balancer routes requests to its registered targets.
+
+![](images/LB_LG.png)
+
 ## Create Launch template
 - Go to the left side and scroll down to instances
 - Select "Launch Template"
