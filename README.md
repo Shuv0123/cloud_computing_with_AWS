@@ -71,5 +71,5 @@ https://aws.amazon.com/about-aws/global-infrastructure/
 ## Scale in/out vs Scale up/down
 - Scale in/out is when you increse or decrease the number of instances/servers running. Whereas Scale up/down is when you increse the capacity of the instance or server how big the server is (storage)
 
->[Auto Scalling using Load Balancing](multi_AZs-autoscalling_group_with_LB_SETUP.md)
+>[Auto Scalling using Load Balancing](ASG_LB_cloudwatch.md)
 

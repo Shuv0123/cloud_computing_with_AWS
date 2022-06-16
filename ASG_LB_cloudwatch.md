@@ -15,9 +15,9 @@ Autoscaling is a service within AWS that automatically monitors and adjusts the 
 ## Load Balancer
 A loadbalancer is a service that distributes traffic between servers so that no instance get overwelmed. It works litterally like a balance. 
 There are different types of load balancers, which one to use depends on business needs:
- - Application Load Balancer (ALB), they work with internet facing app and they are the most advanced Load Balancers
+ - Application Load Balancer (ALB), they work with internet facing app and they are the most advanced Load Balancers - layer 7 (http/https only)
  - Elastic Load Balancer (ELB)
- - Network Load Balnacer (NLB)
+ - Network Load Balnacer (NLB) - layer 7 (ultra high performance, TCP, usually for gaming)
 
 ## Benefits of Load Balancer
 - distrubutes traffic load across different instances
@@ -25,6 +25,11 @@ There are different types of load balancers, which one to use depends on busines
 - do regualr health checks of instances
 - high availability across zones 
 
+## Benefits of Elastic Load Balancer
+- ELB is a manged load Balancer which means:
+  - AWS gurantees that it will be working
+  - AWS will take care of upgardes, maintanence and high availability
+- Even though ALB is less expensive, however it takes a lot more effort on your end to maintain or integrate new updates
 
 ## Listener Group
 A listener is a process that check for connection requests using the protocol and port that you configure. The rules that you define for a listener determine how the load balancer routes requests to its registered targets.
@@ -43,17 +48,21 @@ A listener is a process that check for connection requests using the protocol an
   - t2 micro
 - Key pair 
    - eng119.pem
-- Network settinga
-  - Do not include in Launch Template
+- Network settings
+  - do not include subnet and security group, this will be defined in the autoscaling group
 - Advanced details (scroll down to end )
+- `user data` box is the provision.sh you can create a script which will be run when the instance are spinned up
    - User data (thats our provision.sh file)
-      - #!/bin/bash
-      - sudo apt-get update -y
-      - sudo apt-get upgrade -y
-      - sudo apt-get install nginx -y
-      - sudo systemctl restart nginx
-      - sudo systemctl enable nginx
+``` bash
+#!/bin/bash
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install nginx -y
+sudo systemctl restart nginx
+sudo systemctl enable nginx
+```
 - Create Launch Template
+
 ## Create Auto Scalling Group
 - Open new AWS window drop down to Auto Scalling
   - click on Auto Scaliing Groups 
@@ -64,15 +73,15 @@ A listener is a process that check for connection requests using the protocol an
 - Network
   - we have 3 AZs in ireland, in each AZ we have subnet(ec2)
   - select all defaults 1a, 1b, 1c and press next
-- Create a Load balancer if you havent created one already
-  - load balancer scheme - slect Internet facing
+- Create a Load balancer if you have not created one already
+  - load balancer scheme - slect Internet facing (ALB)
 - Listeners and routing
   - default routing if you dont have one create one
 - Group size
    - Desired capacity 2 (24/7 there should be 2 instances running)
    - Minimum capacity 2
    - Maximum capacity 3 (if traffic increases a third one will be made available by AWS)
-- Scalling policy
+- Scalling policy (you can add monitoring in this section if you want otherwise you can specify later)
   - Select "Target tracking scalling policy"
   - Metric type
      - Average CPU utilization
@@ -81,5 +90,23 @@ A listener is a process that check for connection requests using the protocol an
 - Add tags
    - "Name" "eng110-shuvo-resorces" this is going to be the name of your instances
 - Create Auto Scalling group 
+
+## SNS Cloudwatch CPU utilization
+- Go to the ASG created previously
+- Click on `monitoring` followed by `Cloudwatch` and `alarms`
+- `create a new alarm`
+- Select `EC2` and then the `ASG` 
+- Select `CPUUtilazation`
+- select `period`
+- set CPU value to 50
+- Create a SNS topic with tag
+- Enter the email you want to be notified on
+- Create dynamic scalling policy
+- Select `step scalling`
+- Select `Cloudwatch alarm`
+- Select the action from dropdown menu
+- Specify the value of capacity unit
+- Specify the time the instance needs to spin up
+
 
 
