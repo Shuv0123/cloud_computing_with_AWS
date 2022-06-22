@@ -1,6 +1,8 @@
 ## VPC
 - Virtual Private Cloud (VPC) is the networking layer for Amazon Elastic Compute Cloud (Amazon EC2) and provides a private, isolated section of the AWS Cloud where you can launch AWS services and other resources in a virtual network.
 
+![](images/VPC_layout.png)
+
 ## Why we need VPC
 - When we create a service on the cloud they are open to the world, anyone can access it which makes it vulnerable to attacks  from the outside. VPC is there in order to protect the service by only allowing specific IP addresses.
 
@@ -84,3 +86,5 @@ Classless Inter-Domain Routing (CIDR) is a method for allocating IP addresses by
 - security group, source TCP and port range 27017. For the source, choose the CDIR address from your public subnet (for example 10.0.1.0/24). Also choose 22 with your ip
 - In your app instance, use the sudo echo "export DB_HOST=mongodb://your_db_ip:27017/posts" >> ~/.bashrc and replace your_db_ip with the Private IPv4 Address of your DB instance
 - In the app instance, do cd /app and run npm start
+
+![](images/VPC.png)
