@@ -25,37 +25,6 @@ Listeners support the following protocols and ports:
 
 
 
-
-# what is VPC and services attached to VPC
-![](images/VPC_layout.png)
-
-Virtual Private Cloud (VPC) is the networking layer for Amazon Elastic Compute Cloud (Amazon EC2) and provides a private, isolated section of the AWS Cloud where you can launch AWS services and other resources in a virtual network.
-
-## Why do we need a VPC?
-
-
-
-## Iternet gateway
-A computer that sits between different networks or applications. The gateway converts information, data or other communications from one protocol or format to another. A router may perform some of the functions of a gateway. An Internet gateway can transfer communications between an enterprise network and the Internet.
-
-An internet gateway is a horizontally scaled, redundant, and highly available VPC component that allows communication between your VPC and the internet. An internet gateway enables resources (like EC2 instances) in your public subnets to connect to the internet if the resource has a public IPv4 address or an IPv6 address. Similarly, resources on the internet can initiate a connection to resources in your subnet using the public IPv4 address or IPv6 address. For example, an internet gateway enables you to connect to an EC2 instance in AWS using your local computer.
-
-An internet gateway serves two purposes: to provide a target in your VPC route tables for internet-routable traffic, and to perform network address translation (NAT) for instances that have been assigned public IPv4 addresses. For more information, see Enable internet access.
-
-An internet gateway supports IPv4 and IPv6 traffic. It does not cause availability risks or bandwidth constraints on your network traffic. There's no additional charge for having an internet gateway in your account.
-
-
-## Routing table
-A route table contains a set of rules, called routes, that determine where network traffic from your subnet or gateway is directed. 
-
-eg. traffic light, controls and diverts the traffic in the internet
-
-## WHat is a subnet
-A subnet, or subnetwork, is a network inside a network. Subnets make networks more efficient. Through subnetting, network traffic can travel a shorter distance without passing through unnecessary routers to reach its destination.
-
-## WHat is CIDR block (Classes inter Domain Routing)
-The CIDR block is a fixed prefix length of /56
-
 ## Sub-mask
 A subnet mask is a 32-bit number created by setting host bits to all 0s and setting network bits to all 1s. In this way, the subnet mask separates the IP address into the network and host addresses.
 
@@ -106,32 +75,6 @@ benefits
 - It is built with Java and hence, it is portable to all the major platforms.
 # What is the SDLC using Jenkins stages
 
-
-# what tools are available in the industry for CICD
-1. Self-Hosted
-Drone CI (Continuous Delivery platform written in GO)
-TeamCity (By Jetbrains)
-2. Hosted ( as a service)
-
-Wercker
-CircleCI
-CodeShip
-SemaphoreCI
-Amazon AWS CI/CD tools
-# 
-#which OS does it support?
-uname -a
-#Which Time zone date
-date
-#which env does it provide
-
-#does it have a node support
-
-if os id linux+ubuntu trigger next job
-
-launch template vs launch configuration
-
-s3 standard vs s3 glaciar difference
 
 lunch configuration immutable
 lunch template is mutable

@@ -36,6 +36,9 @@ A listener is a process that check for connection requests using the protocol an
 
 ![](images/LB_LG.png)
 
+## Launch Template VS Launch Configuration
+
+
 ## Create Launch template
 - Go to the left side and scroll down to instances
 - Select "Launch Template"
@@ -108,5 +111,16 @@ sudo systemctl enable nginx
 - Specify the value of capacity unit
 - Specify the time the instance needs to spin up
 
+>[AWS SNS setup](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/US_SetupSNS.html)
 
+>[SNS and cloudwatch](https://docs.aws.amazon.com/sns/latest/dg/sns-monitoring-using-cloudwatch.html)
 
+## Four Golden Signals of Monitoring (LETS)
+
+- Latency: The time it takes to send a request
+
+- Errors: The rate of requests that fail, either explicitly (e.g., HTTP 500s), implicitly (for example, an HTTP 200 success response, but coupled with the wrong content), or by policy (for example, "If you committed to one-second response times, any request over one second is an error").
+
+- Traffic: A measure of how much demand is being placed on your system, measured in a high-level system-specific metric. For a web service, this measurement is usually HTTP requests per second.
+
+- Saturation: How "full" your service is. A measure of your system fraction, emphasizing the resources that are most constrained (e.g., in a memory-constrained system, show memory; in an I/O-constrained system, show I/O). Note that many systems degrade in performance before they achieve 100% utilisation, so having a utilisation target is essential.
