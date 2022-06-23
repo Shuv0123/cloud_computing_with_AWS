@@ -19,21 +19,25 @@ Subnet is a range of IP addresses in the VPC. We can launch AWS resources, such 
 Classless Inter-Domain Routing (CIDR) is a method for allocating IP addresses by giving a range of useable IP addresses /32 or /16.
 
 ## Subnet Mask
-
+A subnet mask is a number that distinguishes the network address and the host address within an IP address
 
 ## what is an IP
-- IP is short for internet protocol. An internet protocol is essentially
+- IP is short for internet protocol. An internet protocol is essentially a unique number that allows our devices to communicate with each other
 
 ## IP network
+- An IP network refers to any group of devices, each with their own unique IP addresses, connected under the same network topology. Devices connected to a shared IP network can send and receive information. 
+
+- A private IP network allows data to be shared between connected devices securely, by enforcing password protected connectivity that allows only those devices in your office or home to access the IP network
 
 ## NACL
-
+- Network Access Control List is essential a fireawall around subnets that protects them fro unwated external attacks. 
 
 ## NACL vs Security Group
-- NACL and Security Groups are both firewalls, NACL is a firewall for the VPC subnets 
+- NACL and Security Groups are both firewalls, however NACL is a firewall for the VPC subnets whereas security group is a firewall around the instance. 
+- when setting up an NACL you have to specify bot ingress and egress rules making it stateless, whereas in security group you only specify the ingress rule, the egress rule is allow all, which makes it stateful
 
 ## Statefull vs stateless
-- A STATELESS process can be understood as a process where there is no data or reference to previous transaction being stored 
+- A STATELESS process can be understood as a process where there is no data or reference to previous transaction are being stored 
 
 ## VPC setup
 - On the AWS Dashboard search for `VPC` and click on `Your VCP`

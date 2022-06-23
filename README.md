@@ -66,7 +66,9 @@ https://aws.amazon.com/about-aws/global-infrastructure/
 
 >[Amazon Machine Image(AMI) Set-Up](AMI_set_up.md)
 
->[Simple Storage Service S3](S3.md)
+>[Simple Storage Service (S3)](S3.md)
+
+>[Virtual Private Cloud (VPC)](VPC.md)
 
 ## Scale in/out vs Scale up/down
 - Scale in/out is when you increse or decrease the number of instances/servers running. Whereas Scale up/down is when you increse the capacity of the instance or server how big the server is (storage)
