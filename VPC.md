@@ -1,7 +1,7 @@
 ## VPC
 - Virtual Private Cloud (VPC) is the networking layer for Amazon Elastic Compute Cloud (Amazon EC2) and provides a private, isolated section of the AWS Cloud where you can launch AWS services and other resources in a virtual network.
 
-![](images/VPC_layout.png)
+![](images/VPC.png)
 
 ## Why we need VPC
 - When we create a service on the cloud they are open to the world, anyone can access it which makes it vulnerable to attacks  from the outside. VPC is there in order to protect the service by only allowing specific IP addresses.
@@ -10,8 +10,7 @@
 - the internet gateway connects the VPC to the internet so that the instances can access it 
 
 ## Route table
-- A route table contains a set of rules that directs the traffic between the internet gateway and subnet.
-
+- A route table contains a set of rules that directs the traffic between the internet gateway and subnet
 ## Subnets
 Subnet is a range of IP addresses in the VPC. We can launch AWS resources, such as EC2 instances, into a specified subnet. When we create a subnet, we specify the IPv4 CIDR block for the subnet. Each subnet must reside entirely within one AZ. By launch instances in separate AZs, we can protect our services from the failure of a single zone.
 
